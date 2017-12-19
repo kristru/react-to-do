@@ -42,7 +42,7 @@ class App extends Component {
           )}
         </ul>
         <form onSubmit={ (e) => this.handleSubmit(e) }>
-          <input type="text" value={ this.setState.newTodoDescription } onChange={ (e) => this.handleChange(e) } />
+          <input type="text" value={ this.state.newTodoDescription } onChange={ (e) => this.handleChange(e) } />
           <input type="submit" />
         </form>
       </div>
