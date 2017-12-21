@@ -30,7 +30,6 @@ class App extends Component {
      this.setState({ todos: [...this.state.todos, newTodo], newTodoDescription: '' });
    }
 
-/*This component*/
   toggleComplete(index) {
     const todos = this.state.todos.slice();
     const todo = todos[index];
