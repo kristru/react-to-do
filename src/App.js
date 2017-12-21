@@ -15,11 +15,18 @@ class App extends Component {
     };
   }
 
+  styleText(index) {
+    const todos = this.state.todos.slice();
+    const todo = todos[index];
+    console.log('update this:' + todo);
+    this.setState(() => todo.description.toUpperCase);
+  }
+
   deleteTodo(index) {
      const todos = this.state.todos.filter( todo => todo !== this.state.todos[index] );
      console.log(todos);
      this.setState({todos: todos});
-  }
+   }
 
    handleChange(e) {
      this.setState({ newTodoDescription: e.target.value });
@@ -44,11 +51,21 @@ class App extends Component {
       <div className="App">
         <ul>
            { this.state.todos.map( (todo, index) =>
-            <ToDo key={ index } deleteTodo={ () => this.deleteTodo(index) } description={ todo.description } isCompleted={ todo.isCompleted } toggleComplete={ () => this.toggleComplete(index)} />
+            <ToDo
+              key={ index }
+              styleText={ () => this.styleText(index) }
+              deleteTodo={ () => this.deleteTodo(index) }
+              description={ todo.description }
+              isCompleted={ todo.isCompleted }
+              toggleComplete={ () => this.toggleComplete(index) }
+            />
           )}
         </ul>
         <form onSubmit={ (e) => this.handleSubmit(e) }>
-          <input type="text" value={ this.state.newTodoDescription } onChange={ (e) => this.handleChange(e) } />
+          <input type="text"
+              value={ this.state.newTodoDescription }
+              onChange={ (e) => this.handleChange(e) }
+          />
           <input type="submit" />
         </form>
       </div>
