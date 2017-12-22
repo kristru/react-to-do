@@ -19,7 +19,7 @@ class App extends Component {
     const todos = this.state.todos.slice();
     const todo = todos[index];
     console.log('update this: ' + todo.description);
-    this.setState(() => document.getElementById('taskDescription').style.textTransform ='uppercase');
+    this.setState(() => document.getElementById('taskDescription').style.textTransform =('uppercase'));
   }
 
   deleteTodo(index) {
