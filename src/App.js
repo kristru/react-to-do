@@ -16,10 +16,10 @@ class App extends Component {
   }
 
   styleText(index) {
-    const todos = this.state.todos;
+    const todos = this.state.todos.slice();
     const todo = todos[index];
     console.log('update this: ' + todo.description);
-    //this.setState(() => object.style.textTransform ='uppercase');
+    this.setState(() => document.getElementById('taskDescription').style.textTransform ='uppercase');
   }
 
   deleteTodo(index) {

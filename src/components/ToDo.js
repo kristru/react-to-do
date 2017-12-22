@@ -7,7 +7,7 @@ class ToDo extends Component {
       <button onClickCapture={this.props.styleText}>Style Text</button>
       <button onClickCapture={this.props.deleteTodo}>Delete</button>
       <input type="checkbox" checked={ this.props.isCompleted } onChange={ this.props.toggleComplete } />
-      <span>{this.props.description}</span>
+      <span id="taskDescription">{this.props.description}</span>
       </li>
     );
   }
